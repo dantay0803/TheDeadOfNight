@@ -1,0 +1,10 @@
+/*Style game page*/
+.game{
+    cursor: url('../Assets/spr_cursor.png'), default;
+    background-color: black;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}

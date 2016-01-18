@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="B00240424 Game">
+    <meta name="author" content="Daniel Taylor">
+
+    <title>The Dead of Night</title>
+
+
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+
+    <script src="JavaScript/Lib/phaser.min.js"></script>
+    <script src="JavaScript/Game/scr_boot.js"></script>
+    <script src="JavaScript/Game/scr_preloader.js"></script>
+    <script src="JavaScript/Game/scr_mainMenu.js"></script>
+    <script src="JavaScript/Game/scr_controls.js"></script>
+    <script src="JavaScript/Game/scr_level.js"></script>
+    <script src="JavaScript/Game/scr_upgrades.js"></script>
+
+</head>
+<body class="game">
+<script type="text/javascript">
+    /*Game Strut
+     preload
+     main menu
+     controls
+     options?
+     game
+     upgrades
+     */
+
+    //CanvasSize
+    var canvasWidth = 1280, canvasHeight = 720;
+    //NewPhaserGame
+    var game = new Phaser.Game(canvasWidth, canvasHeight);
+    //AddGameStates
+    game.state.add('boot', MyGame.StateA);
+    game.state.add('preloader', MyGame.StateB);
+    game.state.add('mainMenu', MyGame.StateC);
+    game.state.add('controls', MyGame.StateD);
+    game.state.add('level', MyGame.StateE);
+    game.state.add('upgrades', MyGame.StateF);
+    //StartPreloader
+    game.state.start('boot');
+    //LoadCustomFont
+    WebFontConfig = {
+        //active: function() { game.time.events.add(Phaser.Timer.SECOND, createText, this); },
+        google: { families: [ 'VT323::latin' ] }
+    };
+    //ShowHTMLMenu
+    var menu = document.getElementById("main-bootstrap-menu");
+    menu.style.display = 'normal';
+</script>
+
+</body>
+</html>
